@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#9fe08a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Chicken Run</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="flash"></div>
+
+<div id="hud" class="hidden">
+  <div class="hud-top">
+    <div class="pill" id="aliveBox">🐔 <span id="aliveTxt">0/0</span></div>
+    <div class="prog">
+      <div class="prog-bar"><div id="progFill"></div><div id="progChick">🐤</div></div>
+      <span id="progTxt">0%</span>
+    </div>
+    <div class="pill hidden" id="graceBox">⏱ <span id="graceTxt">10</span></div>
+  </div>
+  <div id="feed"></div>
+  <div id="big"><div id="bigText"></div><div id="subText"></div></div>
+  <div id="specBar" class="hidden">👀 กำลังดู <b id="specName"></b> · แตะจอเพื่อเปลี่ยน</div>
+  <div id="dashBtn"><span>DASH</span></div>
+  <div id="keysHint">WASD / ลูกศร = เดิน · SPACE = DASH</div>
+</div>
+
+<div id="menu" class="screen">
+  <div class="card">
+    <div class="logo-chick"><canvas id="logoCv" width="220" height="170"></canvas></div>
+    <h1>CHICKEN RUN</h1>
+    <p class="tag">วิ่งไปข้างหน้า อย่าโดนรถ แล้วผลักเพื่อนได้ 🐣💨</p>
+    <label for="nameIn">ชื่อไก่ของคุณ</label>
+    <input id="nameIn" maxlength="12" autocomplete="off" placeholder="เช่น Khing">
+    <button id="playBtn" class="btn big">🐔 เข้าเล่นเลย!</button>
+    <div id="menuErr" class="err"></div>
+    <button id="shareUrl" class="share hidden" title="คัดลอกลิงก์"></button>
+  </div>
+</div>
+
+<div id="lobby" class="screen hidden">
+  <div class="card">
+    <h2>⏳ รอรอบถัดไป</h2>
+    <div class="small">มีคนกำลังเล่นอยู่ รอบใหม่จะเริ่มอัตโนมัติ</div>
+    <ul id="plist"></ul>
+    <div class="small wait">รอแป๊บนะ... 🥚</div>
+    <button id="leaveBtn" class="btn ghost">ออกจากเกม</button>
+  </div>
+</div>
+
+<div id="results" class="screen hidden">
+  <div class="card">
+    <h2 id="resTitle">🏆 WINNER</h2>
+    <ol id="rlist"></ol>
+    <div id="dangerBox"></div>
+    <div id="nextRound" class="small wait">รอบใหม่กำลังจะเริ่ม... 🥚</div>
+    <button id="leave2Btn" class="btn ghost">ออกจากเกม</button>
+  </div>
+</div>
+
+<div id="toast" class="hidden"></div>
+
+<script src="shared.js"></script>
+<script src="audio.js"></script>
+<script src="art.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

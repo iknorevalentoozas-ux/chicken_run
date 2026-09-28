@@ -1,0 +1,13 @@
+{
+  "name": "chicken-run",
+  "version": "0.1.0",
+  "description": "Chicken Run — real-time multiplayer party game (2–8 chickens)",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
